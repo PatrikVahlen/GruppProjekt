@@ -1,3 +1,27 @@
+let messagebox = document.getElementById("messagebox_input");
+
+let textarea = document.createElement("textarea");
+textarea.className = "form-control";
+textarea.rows = "3";
+
+let randomNumber = Math.floor(Math.random() * 4);
+
+switch (randomNumber) {
+  case 0:
+    textarea.placeholder = "Message in a bottle...";
+    break;
+  case 1:
+    textarea.placeholder = "Message to the moon...";
+    break;
+  case 2:
+    textarea.placeholder = "Leave a message at the tone...";
+    break;
+  default:
+    text = "Return to sender, adress unknown. No such number, no such zone...";
+}
+
+messagebox.appendChild(textarea);
+
 const url = "https://14d3-98-128-229-80.ngrok.io/get_posts";
 
 function renderInteractionList(data) {
