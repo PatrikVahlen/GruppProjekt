@@ -72,6 +72,8 @@ body{
     padding: 20px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 #publishbutton button{
