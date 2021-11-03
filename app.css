@@ -64,7 +64,6 @@ body{
 
 #messagebox_input{
     padding-bottom: 10px;
-    
 }
 
 #messagebox{
@@ -88,8 +87,16 @@ body{
     border-color: var(--spotify-module) !important;
 }
 
-#messageboard{
-    
+#messageboard article{
+    background-color: var(--spotify-module);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#messageboard ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
 }
 
 
