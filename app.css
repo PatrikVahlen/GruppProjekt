@@ -3,32 +3,36 @@ html{
 }
 
 body{
-    --spotify-color: #1DD660;
+    --spotify-color: #1DB954;
     --spotify-background: #333333;
     --spotify-module: #282828;
     --spotify-module-dark: #181818;
     color: white;
     font-family: gotham light;
-    background-image: linear-gradient(180deg, #121e3d 0, #000);
+    background-image: linear-gradient(180deg, #535353 0, #121212);
 }
 
 .container{
     margin: auto !important;
     max-width: 80%;
     height: 100vh;
+    
 }
 
 #navmenu{
     background-color: var(--spotify-module);
-    
+    margin-top: 20px;
 }
 
 #feed{
     background-color: var(--spotify-module-dark);
+    margin-top: 20px;
+    border-left: 2px solid var(--spotify-background);
 }
 
 #widgets{
     background-color: var(--spotify-color);
+    margin-top: 20px;
 }
 
 #navmenu li{
@@ -73,6 +77,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    margin-top: 40px;
     width: 100%;
 }
 
@@ -88,11 +93,16 @@ body{
     border:none;
     border-color: var(--spotify-module) !important;
 }
-
+#messageboard{
+    overflow-y: scroll;
+    height: 70vh;
+}
 #messageboard article{
     background-color: var(--spotify-module);
     border-radius: 10px;
     padding: 20px;
+    margin-bottom: 20px
+    
 }
 
 #messageboard ul{
@@ -100,6 +110,84 @@ body{
     list-style: none;
     justify-content: space-evenly;
 }
+
+#widgets{
+    background-color: var(--spotify-module-dark);
+    border-left: 2px solid var(--spotify-background);
+    border-top: 1px solid var(--spotify-background);
+    height: 98vh;
+}
+#widgets iframe{
+    margin-top: 10px;
+    width:100%;
+    border-radius: 10px;
+    height: 30%;
+}
+.widgets_input{
+    display: flex;
+    background-color: var(--spotify-module);
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.widgets_input input{
+    background-color: var(--spotify-module);
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+}
+h2{
+    font-size: 20px;
+    /* border-bottom:1px solid var(--spotify-background); */
+    border-width: 300%;
+}
+
+.widgets_widgetContainer {
+    border-top: 1px solid var(--spotify-module);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.widgets_widgetContainer a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.widgets_widgetContainer a:hover {
+    color: var(--spotify-color)
+}
+.widgets_widgetContainer p{
+    color: grey;
+    text-decoration: none;
+    font-size: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.newsfeed{
+    overflow-y: scroll;
+    height: 60%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+h1{
+    margin-top: 10px;
+}
+
+
 
 
 
