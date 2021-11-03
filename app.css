@@ -32,11 +32,15 @@ body{
 }
 
 #navmenu li{
-    display: flex;
+    display: inline-block;
     list-style: none;
     font-size: 17px;
     padding: 20px 20px 0px 20px;
     width: 100%;   
+}
+
+#navmenu ul{
+   align-items:center;
 }
 
 #navmenu a {
@@ -50,7 +54,7 @@ body{
 }
 
 #navmenu span{
-padding-right: 10px;
+    padding-right: 10px;
 }
 
 #logo{
@@ -71,6 +75,22 @@ padding-right: 10px;
     flex-direction: column;
 }
 
+#publishbutton button{
+    border-radius: 20px;
+    background-color: var(--spotify-color);
+    border: none;
+    padding: 8px;
+}
+
+.form-control, .form-control:focus {
+    background-color: var(--spotify-module);
+    border:none;
+    border-color: var(--spotify-module) !important;
+}
+
+#messageboard{
+    
+}
 
 
 
