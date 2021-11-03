@@ -1,14 +1,28 @@
-const url = "https://14d3-98-128-229-80.ngrok.io/";
-const array_of_placeholders = ["Message in a bottle", "Message to the moon", "Leave a message at the tone", "Return to sender, adress unknown. No such number, no such zone", "Them late night messages", "Now, I endorse this message"]
+let messagebox = document.getElementById("messagebox_input");
 
-const messagebox = document.getElementById("messagebox_input");
-const textarea = document.createElement("textarea");
+let textarea = document.createElement("textarea");
 textarea.className = "form-control";
 textarea.rows = "3";
-textarea.id = 'input';
-textarea.placeholder = array_of_placeholders[Math.floor(Math.random() * 4)] + '...';
+
+let randomNumber = Math.floor(Math.random() * 4);
+
+switch (randomNumber) {
+  case 0:
+    textarea.placeholder = "Message in a bottle...";
+    break;
+  case 1:
+    textarea.placeholder = "Message to the moon...";
+    break;
+  case 2:
+    textarea.placeholder = "Leave a message at the tone...";
+    break;
+  default:
+    text = "Return to sender, adress unknown. No such number, no such zone...";
+}
+
 messagebox.appendChild(textarea);
 
+const url = "https://14d3-98-128-229-80.ngrok.io/get_posts";
 
 function renderInteractionList(data) {
   const interaction = document.createElement("div");
@@ -41,52 +55,29 @@ viewBox="0 0 16 16">
   return interaction.appendChild(interactionList);
 }
 
-function renderTweet(data) {
-  const messageboard = document.getElementById("messageboard");
-  const tweet = document.createElement("article");
-  const user = document.createElement("strong");
-  user.innerText = `${data.username}`;
-  const content = document.createElement("p");
-  content.innerText = `${data.content}`;
+function renderTweets(data) {
+  data.forEach((data) => {
+    const messageboard = document.getElementById("messageboard");
+    const tweet = document.createElement("article");
+    const user = document.createElement("strong");
+    user.innerText = `${data.username}`;
+    const content = document.createElement("p");
+    content.innerText = `${data.content}`;
 
-  const interaction = renderInteractionList(data);
+    const interaction = renderInteractionList(data);
 
-  tweet.appendChild(user);
-  tweet.appendChild(content);
-  tweet.appendChild(interaction);
+    tweet.appendChild(user);
+    tweet.appendChild(content);
+    tweet.appendChild(interaction);
 
-  messageboard.prepend(tweet);
+    messageboard.appendChild(tweet);
+  });
 }
 
 function getTweets() {
-  fetch(url + 'get_posts')
+  fetch(url)
     .then((res) => res.json())
-    .then((data) => data.forEach(el => renderTweet(el)));
+    .then((data) => renderTweets(data));
 }
+
 getTweets();
-
-function post_tweet() {
-    const new_post = {
-        img_src: null,
-        title: 'Tweet',
-        content: document.getElementById('input').value,
-        username: 'felle21',
-        likes:0,
-        dislikes: 0,
-        shares: 0
-    }
-   const data = JSON.stringify(new_post);
-
-fetch(url + 'save_post', {
-    method: 'POST',
-    headers: {
-        'content-type': 'application/json',
-    },
-    body: data
-})
-.then(res => res.json())
-.then(data => {
-  document.getElementById('input').value = '';
-  renderTweet(data);
-})
-}

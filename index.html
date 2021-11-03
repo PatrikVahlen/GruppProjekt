@@ -5,298 +5,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tw0tter</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <style>
-        .box:hover {
-            background: rgb(224, 224, 221);
-        }
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        .paragraph {
-            background: rgb(248, 248, 248);
-        }
-    </style>
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-    <div class="text-primary text-center">
-        <h5 class="">tw0tter</h5>
-    </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="sticky-top">
-                    <div class="mt-3 rounded mb-3">
-                        <ul class="nav flex-column">
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class=" nav-link active" aria-current="page" href="meny.html">HEM</a>
-                                </li>
+            <div class="col-lg-3" id="navmenu">
+                <div>
+                    <img id="logo" class="img-fluid" src="./Graphics/Spotifan_Logo.png" alt="Spotifan">
+                </div>
+                <ul>
+                    <li><span class="material-icons">home</span>
+                        <a href="">Home</a>
+                    </li>
+                    <li><span class="material-icons">public</span>
+                        <a href="">Explore</a>
+                    </li>
+                    <li><span class="material-icons">notifications</span>
+                        <a href="">Notifications</a>
+                    </li>
+                    <li><span class="material-icons">email</span>
+                        <a href="">Messages</a>
+                    </li>
+                    <li><span class="material-icons">bookmark</span>
+                        <a href="">Bookmarks</a>
+                    </li>
+                    <li><span class="material-icons">format_list_bulleted</span>
+                        <a href="">Lists</a>
+                    </li>
+                    <li><span class="material-icons">person</span>
+                        <a href="">Profile</a>
+                    </li>
+                    <li><span class="material-icons">more_horiz</span>
+                        <a href="">More</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6" id="feed">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Home</h1>
+                            <div id="messagebox">
+                                <div id="messagebox_input" class="col-auto">
+                                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                                    <!-- <textarea class="form-control" rows="3"
+                                        placeholder="Message in a bottle"></textarea> -->
+                                </div>
+                                <div id="publishbutton" class="col-md-12">
+                                    <button class="btn btn-primary mb-3" onclick="post_tweet()">Publish</button>
+                                </div>
                             </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">&#9997; Utforska</a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Notiser <span class="badge bg-primary">4</span></a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Meddelande <span
-                                            class="badge bg-primary">99+</span></a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Bokmärken</a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Listor</a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Profil</a>
-                                </li>
-                            </div>
-                            <div class="box rounded">
-                                <li class="nav-item">
-                                    <a class="nav-link " href="">Mer</a>
-                                </li>
-                            </div>
-
-                        </ul>
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button type="button" class="btn btn-primary">tw0t!</button>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="mt-3">
-                        <!-- Default dropup button -->
-                        <div class="btn-group dropup ">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                LOG IN
-                            </button>
-                            <ul class="dropdown-menu">
-                                LOG IN
-                            </ul>
+                        </div>
+                        <h2>Trending</h2>
+                        <div id="messageboard" class="col-md-12 overflow-auto">
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 mt-3">
-                <div class="">
-                    <div class="border border-primary">
-                        <nav class="navbar navbar-light ">
-                            <div class="container-fluid">
-                                <form class="d-flex">
-                                    <input class="form-control me-2" type="search" placeholder="What's happening dude"
-                                        aria-label="Search">
-                                    <button class="btn btn-outline-primary" type="submit">tw0t!</button>
-                                </form>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="box">
-                            <p><strong><a href="">Lorem ipsum</a></strong> dolor sit amet consectetur adipisicing elit.
-                                Ad
-                                dignissimos
-                                ducimus voluptas eius impedit tempora ut. Omnis tempore dolores corrupti vel harum
-                                distinctio, debitis eligendi, soluta necessitatibus veritatis officia aliquid?</p>
-                        </div>
-                        <img class="card-img-top img-fluid"
-                            src="https://images.unsplash.com/photo-1635809474692-4cb6660aa647?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                            alt="Card image cap">
-                        <div class="box card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <button type="button" class="btn btn-primary">like!</button>
+            <div class="col-lg-3" id="widgets">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <div class="widgets_input">
+                            <span class="material-icons widgets_searchIcon">search</span>
+                            <input type="text" placeholder="Search Spotifan">
                         </div>
                     </div>
-                    <div class="card mb-3">
-                        <div class="box">
-                            <p> <strong><a href="">Lorem ipsum</a></strong> dolor sit amet consectetur adipisicing elit.
-                                Ad
-                                dignissimos
-                                ducimus voluptas eius impedit tempora ut. Omnis tempore dolores corrupti vel harum
-                                distinctio, debitis eligendi, necessitatibus veritatis officia aliquid?</p>
-                        </div>
-                        <img class="card-img-top img-fluid"
-                            src="https://images.unsplash.com/photo-1635811673181-dfcec01cff02?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                            alt="Card image cap">
-                        <div class="box card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
+                </nav>
+                <h2>Top List</h2>
+                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTMYgB8TqtmR" frameborder="0"
+                    allowtransparency="true" allow="encrypted-media"></iframe>
+                <h2>News</h2>
+                <div class="newsfeed">
+
+                    <div class="widgets_widgetContainer">
+                        <p>YOUR OWN WORDS</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/spotify-mic-check-welcomes-fresh-finds-artist-julia-wolf-to-share-her-story/%22%3E">
+                            ‘Spotify: Mic Check’ Welcomes Fresh Finds Artist Julia Wolf To Share Her Story
+                        </a>
                     </div>
-                    <div class="card mb-3">
-                        <div class="box">
-                            <p><strong><a href="">Lorem ipsum</a></strong> dolor sit amet consectetur adipisicing elit.
-                                Ad
-                                dignissimos
-                                ducimus voluptas eius impedit tempora ut. Omnis tempore dolores corrupti vel harum
-                                distinctio, debitis eligendi, soluta necessitatibus veritatis officia aliquid?</p>
-                        </div>
-                        <img class="card-img-top img-fluid"
-                            src="https://images.unsplash.com/photo-1634278722104-c76412dc73f6?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0M3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                            alt="Card image cap">
-                        <div class="box card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
+                    <div class=" widgets_widgetContainer">
+                        <p>HALLOWEEN HAPPENINGS</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/the-spooky-spotify-podcasts-greenroom-live-events-and-songs-sure-to-give-you-goosebumps-this-scary-season/%22%3E">
+                            The Spooky Spotify Podcasts, Greenroom Live Events, and Songs Sure To Give You Goosebumps
+                            This Scary
+                            Season
+                        </a>
                     </div>
-                    <div class="card mb-3">
-                        <div class="box">
-                            <p><strong><a href="">Lorem ipsum</a></strong> dolor sit amet consectetur adipisicing elit.
-                                Ad
-                                dignissimos
-                                ducimus voluptas eius impedit tempora ut. Omnis tempore dolores corrupti vel harum
-                                distinctio, debitis eligendi, soluta necessitatibus veritatis officia aliquid?</p>
-                        </div>
-                        <img class="card-img-top img-fluid"
-                            src="https://images.unsplash.com/photo-1635787192103-142199c77395?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                            alt="Card image cap">
-                        <div class="box card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                        </div>
+                    <div class=" widgets_widgetContainer">
+                        <p>INSIDE SPOTIFY</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-27/spotify-reports-third-quarter-2021-earnings/%22%3E">
+                            Spotify Reports Third Quarter 2021 Earnings
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 d-none d-md-block">
-                <div class="sticky-top">
-                    <div class="rounded mt-3">
-                        <div>
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            </form>
-                        </div>
-                        <div class="paragraph rounded border border-primary mb-3 mt-3">
-                            <div class="text-primary mt-3">
-                                <h5>SPAM FOR U!</h5>
-                            </div>
-                            <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Cumque,
-                                culpa
-                                tempora, dolore, magnam eius iste minima aperiam voluptatum vitae ducimus sint velit
-                                vero
-                                esse a
-                                autem
-                                dolores nihil. Quam, earum.
-                                <p>
-                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample"
-                                        role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        ...
-                                    </a>
-                                </p>
-                                <div class="collapse" id="collapseExample">
-                                    <div class="card card-body">
-                                        Some placeholder content for the collapse component. This panel is hidden by
-                                        default
-                                        but revealed when the
-                                        user activates the relevant trigger.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Cumque,
-                                culpa
-                                tempora, dolore, magnam eius iste minima aperiam voluptatum vitae ducimus sint velit
-                                vero
-                                esse a
-                                autem
-                                dolores nihil. Quam, earum.
-                            </div>
-                            <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Cumque,
-                                culpa
-                                tempora, dolore, magnam eius iste minima aperiam voluptatum vitae ducimus sint velit
-                                vero
-                                esse a
-                                autem
-                                dolores nihil. Quam, earum.
-                            </div>
-                            <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Cumque,
-                                culpa
-                                tempora, dolore, magnam eius iste minima aperiam voluptatum vitae ducimus sint velit
-                                vero
-                                esse a
-                                autem
-                                dolores nihil. Quam, earum.
-                            </div>
-                            <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Cumque,
-                                culpa
-                                tempora, dolore, magnam eius iste minima aperiam voluptatum vitae ducimus sint velit
-                                vero
-                                esse a
-                                autem
-                                dolores nihil. Quam, earum.
-                            </div>
-                        </div>
-                        <div class="paragraph rounded border border-primary">
-                            <div class="text-primary mt-3">
-                                <h5>TRENDS NERD!</h5>
-                            </div>
-                            <div>
-                                <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cumque,
-                                    culpa
-
-                                    <p>
-                                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample"
-                                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                                            f0ll0w!
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cumque,
-                                    culpa
-
-                                </div>
-                                <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cumque,
-                                    culpa
-
-                                </div>
-                                <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cumque,
-                                    culpa
-
-                                </div>
-                                <div class="box mt-3 rounded">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Cumque,
-                                    culpa
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="widgets_widgetContainer">
+                        <p>WHAT'S NEW</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-21/spotify-mic-check-welcomes-fresh-finds-artist-julia-wolf-to-share-her-story/%22%3E">
+                            Listen—and Watch—Your Favorite Creators as Video Podcasting Comes to Spotify
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>OVER THE MOON</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-26/the-global-gen-z-influenced-rise-of-horoscope-and-astrology-podcasts-on-spotify/%22%3E">
+                            The Global, Gen Z–Influenced Rise of Horoscope and Astrology Podcasts on Spotify
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>WOMEN AT FULL VOLUME</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-29/equal-artist-of-the-month-stayc-encourages-women-artists-to-express-themselves/%22%3E">
+                            EQUAL Artist of the Month STAYC Encourages Women Artists To Express Themselves
+                        </a>
+                    </div>
+                    <div class="widgets_widgetContainer">
+                        <p>GENRE ON THE RISE</p>
+                        <a
+                            href="https://newsroom.spotify.com/2021-10-22/what-is-rap-in-poland-artist-young-leosia-and-her-fellow-rappers-are-ready-with-an-answer/%22%3E">
+                            What Is Rap? In Poland, Artist Young Leosia and Her Fellow Rappers Are Ready With an Answer
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

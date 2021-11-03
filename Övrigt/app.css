@@ -16,6 +16,7 @@ body{
     margin: auto !important;
     max-width: 80%;
     height: 100vh;
+    
 }
 
 #navmenu{
@@ -68,13 +69,9 @@ body{
 #messagebox_input{
     padding-bottom: 10px;
 }
-#input{
-    color: white;
-}
 
 #messagebox{
     background-color: var(--spotify-module);
-
     border-radius: 10px;
     padding: 20px;
     display: flex;
