@@ -26,6 +26,10 @@ body{
     margin-top: 20px;
 }
 
+.active{
+    color: var(--spotify-color) !important;
+}
+
 @media screen and (max-width: 1385px) {
     #navmenu li a{
       font-size: 0px;
