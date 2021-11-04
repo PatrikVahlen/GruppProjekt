@@ -10,6 +10,8 @@ body{
     color: white;
     font-family: gotham light;
     background-image: linear-gradient(180deg, #535353 0, #121212);
+    background-attachment: fixed;
+    overflow-y: hidden;
 }
 
 .container{
@@ -23,33 +25,42 @@ body{
     margin-top: 20px;
 }
 
-#feed{
-    background-color: var(--spotify-module-dark);
-    margin-top: 20px;
-    border-left: 2px solid var(--spotify-background);
-}
+@media screen and (max-width: 1385px) {
+    #navmenu li a{
+      font-size: 0px;
+    }
+  }
 
-#widgets{
-    background-color: var(--spotify-color);
-    margin-top: 20px;
+@media screen and (max-width: 990px) {
+    #navmenu ul {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+#logo{
+    padding: 40px 0px 25px 0px;
+    border-bottom: 1px solid var(--spotify-background);
 }
 
 #navmenu li{
     display: inline-block;
     list-style: none;
     font-size: 17px;
-    padding: 20px 20px 0px 20px;
+    padding: 20px 0px 0px 0px;
     width: 100%;   
 }
 
-#navmenu ul{
-   align-items:center;
+#navmenu div{
+   margin: auto;
+   width:70%
 }
 
 #navmenu a {
     text-decoration: none;
     color: white;
-    text-align: center; 
+    text-align: center;
+    
 }
 #navmenu a:hover {
     color: var(--spotify-color);
@@ -60,21 +71,28 @@ body{
     padding-right: 10px;
 }
 
-#logo{
-    padding: 30px;
-    border-bottom: 1px solid var(--spotify-background);
+#feed{
+    background-color: var(--spotify-module-dark);
+    margin-top: 20px;
+    border-left: 2px solid var(--spotify-background);
+}
+
+h1{
+    margin-top: 40px;
 }
 
 #messagebox_input{
     padding-bottom: 10px;
+    
 }
 #input{
     color: white;
+    resize: none; 
+    box-shadow:none;
 }
 
 #messagebox{
     background-color: var(--spotify-module);
-
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -96,6 +114,7 @@ body{
     border:none;
     border-color: var(--spotify-module) !important;
 }
+
 #messageboard{
     overflow-y: scroll;
     height: 70vh;
@@ -104,8 +123,7 @@ body{
     background-color: var(--spotify-module);
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px
-    
+    margin-bottom: 20px   
 }
 
 #messageboard ul{
@@ -114,27 +132,43 @@ body{
     justify-content: space-evenly;
 }
 
+article li:hover{
+    color: var(--spotify-color);
+    cursor:pointer;
+    transition: color 100ms ease-out;
+}
+
 #widgets{
     background-color: var(--spotify-module-dark);
     border-left: 2px solid var(--spotify-background);
     border-top: 1px solid var(--spotify-background);
-    height: 98vh;
+    height: 100vh;
+    margin-top: 20px;
 }
+
+h2{
+    font-size: 20px;
+    /* border-bottom:1px solid var(--spotify-background); */
+    border-width: 300%;
+}
+
 #widgets iframe{
     margin-top: 10px;
     width:100%;
     border-radius: 10px;
     height: 30%;
 }
+
 .widgets_input{
     display: flex;
     background-color: var(--spotify-module);
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 12px;
     padding-left: 20px;
-    padding-right: 20px;
-    
+    padding-right: 20px;  
 }
+
 .widgets_input input{
     background-color: var(--spotify-module);
     border: none;
@@ -142,11 +176,6 @@ body{
     border-radius: 20px;
     /* padding-left: 10px;
     padding-right: 10px; */
-}
-h2{
-    font-size: 20px;
-    /* border-bottom:1px solid var(--spotify-background); */
-    border-width: 300%;
 }
 
 .widgets_widgetContainer {
@@ -167,6 +196,7 @@ h2{
 .widgets_widgetContainer a:hover {
     color: var(--spotify-color)
 }
+
 .widgets_widgetContainer p{
     color: grey;
     text-decoration: none;
@@ -179,15 +209,11 @@ h2{
 
 .newsfeed{
     overflow-y: scroll;
-    height: 60%;
+    height: 55%;
 }
 
 ::-webkit-scrollbar{
     display: none;
-}
-
-h1{
-    margin-top: 10px;
 }
 
 

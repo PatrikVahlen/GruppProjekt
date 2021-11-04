@@ -1,12 +1,12 @@
 const url = "http://5eb4-98-128-229-80.ngrok.io/";
-const array_of_placeholders = ["Message in a bottle", "Message to the moon", "Leave a message at the tone", "Return to sender, adress unknown. No such number, no such zone", "Them late night messages", "Now, I endorse this message"]
+const array_of_placeholders = ["Message in a bottle", "Message to the moon", "Leave a message at the tone", "Return to sender, adress unknown. No such number, no such zone", "Them late night messages", "Now, I endorse this message", "Staring at the blank page before you", "I'm messaging the man in the mirror"]
 
 const messagebox = document.getElementById("messagebox_input");
 const textarea = document.createElement("textarea");
 textarea.className = "form-control";
 textarea.rows = "3";
 textarea.id = 'input';
-textarea.placeholder = array_of_placeholders[Math.floor(Math.random() * 4)] + '...';
+textarea.placeholder = array_of_placeholders[Math.floor(Math.random() * 8)] + '...';
 messagebox.appendChild(textarea);
 
 
