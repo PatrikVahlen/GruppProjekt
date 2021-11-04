@@ -1,4 +1,4 @@
-const url = "https://14d3-98-128-229-80.ngrok.io/";
+const url = "http://5eb4-98-128-229-80.ngrok.io/";
 const array_of_placeholders = ["Message in a bottle", "Message to the moon", "Leave a message at the tone", "Return to sender, adress unknown. No such number, no such zone", "Them late night messages", "Now, I endorse this message"]
 
 const messagebox = document.getElementById("messagebox_input");
@@ -66,27 +66,27 @@ function getTweets() {
 getTweets();
 
 function post_tweet() {
-    const new_post = {
-        img_src: null,
-        title: 'Tweet',
-        content: document.getElementById('input').value,
-        username: 'felle21',
-        likes:0,
-        dislikes: 0,
-        shares: 0
-    }
-   const data = JSON.stringify(new_post);
+  const new_post = {
+    img_src: null,
+    title: 'Tweet',
+    content: document.getElementById('input').value,
+    username: 'felle21',
+    likes: 0,
+    dislikes: 0,
+    shares: 0
+  }
+  const data = JSON.stringify(new_post);
 
-fetch(url + 'save_post', {
+  fetch(url + 'save_post', {
     method: 'POST',
     headers: {
-        'content-type': 'application/json',
+      'content-type': 'application/json',
     },
     body: data
-})
-.then(res => res.json())
-.then(data => {
-  document.getElementById('input').value = '';
-  renderTweet(data);
-})
+  })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('input').value = '';
+      renderTweet(data);
+    })
 }
