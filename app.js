@@ -70,7 +70,7 @@ function post_tweet() {
     img_src: null,
     title: 'Tweet',
     content: document.getElementById('input').value,
-    username: 'felle21',
+    username: 'Guest --@' + Math.floor(Math.random() * 35),
     likes: 0,
     dislikes: 0,
     shares: 0

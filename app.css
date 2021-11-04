@@ -48,19 +48,17 @@ body{
     list-style: none;
     font-size: 17px;
     padding: 20px 0px 0px 0px;
-    width: 100%;   
+    width: 100%;
 }
 
 #navmenu div{
    margin: auto;
-   width:70%
+   width:50%
 }
 
 #navmenu a {
     text-decoration: none;
     color: white;
-    text-align: center;
-    
 }
 #navmenu a:hover {
     color: var(--spotify-color);
