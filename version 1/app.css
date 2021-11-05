@@ -84,14 +84,6 @@ h1{
     margin-top: 40px;
 }
 
-#username-input{
-    background-color: var(--spotify-module);
-    border-radius: 10px;
-    margin-top: 20px;
-    width: 20%;
-    color:white;
-}
-
 #messagebox_input{
     padding-bottom: 10px;
     
