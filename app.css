@@ -92,6 +92,7 @@ h1{
     color:white;
     border:none;
     outline: none;
+    padding-left: 20px;
 }
 
 #messagebox_input{
