@@ -11,7 +11,7 @@ body{
     font-family: gotham light;
     background-image: linear-gradient(180deg, #535353 0, #121212);
     background-attachment: fixed;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .container{
